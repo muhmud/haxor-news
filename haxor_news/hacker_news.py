@@ -340,6 +340,9 @@ class HackerNews(object):
             netloc = re.sub('www.', '', netloc)
             formatted_item += click.style('(' + netloc + ')',
                                           fg=self.config.clr_view_link)
+        if (item.url):
+            formatted_item += '\n         '
+            formatted_item += item.url
         formatted_item += '\n         '
         formatted_item += click.style(str(item.score) + ' points ',
                                       fg=self.config.clr_num_points)
